@@ -1,0 +1,121 @@
+@startuml diagrama
+Jugador o--Juego
+Jugador o--PacMan
+
+Juego *--Mapa
+Juego *--Personaje
+Juego o--Animación
+Animación *--Color
+
+Mapa *--Coordenada
+Mapa *--Objeto
+
+Coordenada *--CoordenadaX
+Coordenada *--CoordenadaY
+
+Personaje o--Mapa
+Personaje *--Estado
+Personaje <|--PacMan
+Personaje <|--Fantasma
+
+PacMan o--Objeto
+
+Objeto *--Coordenada
+Objeto *--Puntuación
+Puntuación o--Número
+
+Color <|-- Rojo
+Color <|-- Rosa
+Color <|-- Amarillo
+Color <|-- Azul
+Color <|-- Naranja
+
+Objeto <|-- Pastilla
+Objeto <|-- Galaxian
+Objeto <|-- Campana
+Objeto <|-- Llave
+Objeto <|--Fruta
+
+Pastilla <|--Pepita
+Pastilla <|--Pepa
+
+Fruta <|--Cereza
+Fruta <|--Fresa
+Fruta <|--Mandarina
+Fruta <|--Manzana
+Fruta <|-- Uvas
+
+class Juego{
+    +iniciarJuego()
+    +terminarJuego()
+}
+
+class Jugador{
+    +jugar()
+}
+
+class Mapa {
+    -Coordenada: coordenadas(x,y)
+}
+
+class Coordenada{
+    -CoordenadaX:x 
+    -CoordenadaY:y
+}
+
+class CoordenadaX{
+    -X
+}
+class CoordenadaY{
+    -Y
+}
+
+class Personaje{
+    -Estado: estado
+}
+
+class PacMan{
+    +mover()
+    +tomarObjeto()
+}
+class Fantasma{
+    +seguirPM()
+    +transformarse()
+
+}
+class Objeto{
+    -Coordenada: cordx
+    -Coordenada: cordy
+}
+
+class Puntuación{
+    -Número: valor
+    +subirPuntuación(valor,valor)
+}
+class Número{
+    -valor
+}
+
+class Pastilla{}
+class Pepita{}
+class Pepa{}
+
+class Fruta{}
+class Cereza{}
+class Fresa {}
+class Mandarina{}
+class Manzana{}
+class Uvas{}
+class Galaxian{}
+class Campana{}
+class Llave {}
+
+class Color{}
+class Amarillo{}
+class Azul{}
+class Naranja{}
+class Rojo{}
+class Rosa{}
+
+
+@enduml 
