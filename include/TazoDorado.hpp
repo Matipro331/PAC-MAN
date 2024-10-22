@@ -5,10 +5,16 @@ private:
 public:
     TazoDorado() {
         this->flotando = false;
-
     }
+
     ~TazoDorado() {}
-    void flotar(){
+
+    void Flotar(){
         this->flotando = true;
     }
+
+    bool Flotando(){
+        return this->flotando;
+    }
+
 };
