@@ -9,3 +9,5 @@ int main(){
 //   g++     futanito.cpp     -o bin/tazo
 
 //archuivos de inclusión: -I(nombrefolder)
+
+//IDE: Integrated Development Environment
